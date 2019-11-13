@@ -11,5 +11,4 @@ PyMySQL==0.9.3
 Werkzeug==0.16.0
 WTForms==2.2.1
 gunicorn==20.0.0
-dbConnect==2.1
 #pip install --upgrade setuptools
