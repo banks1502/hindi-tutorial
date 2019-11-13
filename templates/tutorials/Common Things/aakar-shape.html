@@ -1,0 +1,135 @@
+
+<!--Update You tube source and article details in paragraph and dictionary selection all_topics-->
+{% extends "header.html" %}
+{% block body %}
+<body class="body">
+
+
+	<div class="container" align="left" style="width:80%;">
+
+		<div class="row">
+			<div class="col-sm-9">
+				<h2>{{curTitle}}</h2>
+				<br>
+				{% for topic in all_topics['Common Things'] %}
+				{% if topic[0] == curTitle and topic[2] != "" %}
+				<p>
+					{{ topic[2] }}
+				</p>
+				{% endif %}
+				{% if topic[0] == curTitle and topic[3] != "" %}
+				<!-- 16:9 aspect ratio -->
+				<center>
+					<div class="embed-responsive embed-responsive-16by9" style="height:80%; width:80%;">
+						<iframe class="embed-responsive-item" src="{{ topic[3]}}?html5=1" ></iframe>
+					</div>
+				</center>
+				{% endif %}
+				{% endfor %}
+				<p>
+						<p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">1. Circle [सर्कल] – चक्र [Cakra]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://1.bp.blogspot.com/-Y_tebE2QrwU/XAatjkFILlI/AAAAAAAALaU/dZPPS6OxyZwQj9SGo0wqosrGCecrq3g9wCLcBGAs/s1600/Circle.gif" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">2. Cone [कोन] – शङ्कु [Sanku]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://3.bp.blogspot.com/-3UXV1G9BAsk/XAauehXqBmI/AAAAAAAALag/vM20Ci12Y1UGP3_n0LjTUVPCydbJIOm7ACLcBGAs/s1600/Cone.jpeg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">3. Cylinder [सिलिन्डर ] – वेलनाकार [Velanakaar]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://2.bp.blogspot.com/-qKp9Wrle44s/XAau0VR-CMI/AAAAAAAALao/MZeL-KnLmM8EE1l72xNcLbilS6-VbcRUQCLcBGAs/s1600/Cylinder.jpg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">4. Cube [क्यूब] – घन [Ghan]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://4.bp.blogspot.com/--M6unmEv2a8/XAavUNdq5UI/AAAAAAAALa0/fUATMLWmhREO2jN7VQFTmzY2wjBGvIqgQCLcBGAs/s1600/Cube.jpg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">5. Dot [डाट] – बिन्दु [Bindu]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://2.bp.blogspot.com/-mWav9akrwKY/XAavmlvlv-I/AAAAAAAALa8/c6bVgSDfjyUBJw5qw79sajLoFsBAqT7oACLcBGAs/s1600/Dot.jpg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">6. Diamond [डाइमन्ड] – तिर्यग्वर्ग [Tiryagvarg]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://3.bp.blogspot.com/-jbK3dt5m4KU/XAawCmyN3wI/AAAAAAAALbE/Ux50VyIqNuoIJ9pwQvtC5LScHrNilKohQCLcBGAs/s1600/Diamond.jpg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">7. Geometry [जीआमिट्री] – रेखागणित [Rekhaganit]</p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">8. Hexagon [हेक्सगान] – षट्कोण [Satkon]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://2.bp.blogspot.com/-0t6CTDmrGJk/XAaxHki5a1I/AAAAAAAALbQ/-XMDqQSiYVsSNO4hAv1zJp5MsOkKbdRlQCLcBGAs/s1600/Hexagon.jpg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">9. Heart [हार्ट] – हृदय [Hrday]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://1.bp.blogspot.com/-7aq9u3P-gKU/XAaxjjPENVI/AAAAAAAALbY/1kJHPD3DaGgTh9uymehsEAAByY7O4rxxACLcBGAs/s1600/Heart.jpg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">10. Line [लाइन] – रेखा [Rekha]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://1.bp.blogspot.com/-FBWPYaT6MR4/XAax8CKMP2I/AAAAAAAALbk/vHpbNILf0csQClhE4lUqhaZWzSbSbXDogCLcBGAs/s1600/Line.jpg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">11. Octagon [आक्टगान] – अष्टभुज [Ashtabhuj]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://4.bp.blogspot.com/-sfOCRd2bUEY/XAayR-1xzOI/AAAAAAAALbs/NGdk-JmQepcxUmeBBXW17t9F1bmQM4WogCLcBGAs/s1600/Octagon.jpg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">12. Oval [ओवल] – अण्डाकार [Andakar]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://2.bp.blogspot.com/-YYYpHMyAriM/XAayt7H3FmI/AAAAAAAALb0/xcO6ZqMSaIs8PSpaYJ2i1V-cMY9snrufgCLcBGAs/s1600/Oval.jpg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">13. Pentagon [पेन्टगान] – पञ्चभुज [Panchbhuj]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://1.bp.blogspot.com/-4jlnTS1-GR4/XAazANC8LBI/AAAAAAAALcA/Y1HX0RBgMF8Zk8axzTkDGe_04pHgo_2GgCLcBGAs/s1600/Pentagon.jpeg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">14. Quadrilateral [क्वाड्रीलैटरल] – चतुर्भुज [Chatarbhuj]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://3.bp.blogspot.com/-ah5Pn8Gilq0/XAazevxYYMI/AAAAAAAALcI/iHoM6CaxInM8u9bNpjBgn4a0Dd3AYxvegCLcBGAs/s1600/Quadrilateral.png" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">15. Rectangle [रेक्टैंगगल] – आयत [Aayat]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://1.bp.blogspot.com/-jgExEDnPkHs/XAaz6HIRznI/AAAAAAAALcQ/IEcbKjPQ96oLbrKuae21yCb_VfF3oxb-QCLcBGAs/s1600/Rectangle.jpg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p>16. Square [स्क्वेर] – वर्गाकार [Vargakaar]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://2.bp.blogspot.com/-43UjUqEUdqQ/XAa0Kz_ZZrI/AAAAAAAALcY/vh1BIYyEs3o14j7l8Nm_T258kJIvKvDEQCLcBGAs/s1600/Square.png" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">17. Semi Circle [सेमी सर्कल] – अर्ध-चक्र [Ardha Chakra]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://3.bp.blogspot.com/-L-B77hBIr4w/XAa0seqXyAI/AAAAAAAALcg/vQUm6leYR9AyQ3rkh2wxNRP_1CPjYpvigCLcBGAs/s1600/Semi%2BCircle.gif" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">18. Sphere [स्फिर] – गोला [Gola]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://3.bp.blogspot.com/-RAhiQ5CLxoQ/XAa0-X2qdYI/AAAAAAAALcs/pfzOGGKaZLIHyYg1tD3v2aiu5o-maD8nQCLcBGAs/s1600/Sphere.gif" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">19. Star [स्टार] – तारा [Tara]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://2.bp.blogspot.com/-KrTcbHhaOew/XAa1KKt9nhI/AAAAAAAALcw/m64GxsQ_t5czYbn3rYdey7-G1VkrlPJKgCLcBGAs/s1600/Star.jpg" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">20. Triangle [ट्राइऐंगल] – त्रिकोण [Trikon]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://1.bp.blogspot.com/-Q-eib9WWzfg/XAa1ZBOl1DI/AAAAAAAALc4/dK64Ot-n7MQamItRpqOw2ELR4TbTxRjrQCLcBGAs/s1600/Triangle.png" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+							  <p style="max-width: 795px; box-sizing: border-box; margin: 0px 0px 27px; padding: 0px; color: rgb(70, 70, 70); font-family: Laila, serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: transparent; text-decoration-style: initial; text-decoration-color: initial;">21. Trapezoid [ट्रैपिज़ॉइड] – विषम चतुर्भुज [Visham Chaturbhuj]
+								<br style="max-width: 795px; box-sizing: border-box;">
+								<img class="toggleimage" src="https://3.bp.blogspot.com/-kOYuI0ehVrA/XAa1n0IukQI/AAAAAAAALdA/I15Hqo_J0PQKO3Nmx_EnndrI6NHNVgHEgCLcBGAs/s1600/Trapezoid.png" data-orig-width="100" style="max-width: 100%; box-sizing: border-box; border: 0px; height: auto; cursor: pointer; background-color: transparent; width: 76px;">
+							  </p>
+				</p>
+			</div>
+			<div class="col-sm-3">
+				<div class="card" style="width:18rem;">
+					<ul class="list-group">
+						{% for topic in all_topics['Common Things']%}
+						{% if topic[0] == curTitle %}
+						<li class="list-group-item list-group-item-secondary">{{topic[0]}}</li>
+						{% else %}
+						<li class="list-group-item"><a title="{{topic[0]}}">{{topic[0]}}</li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<p>The next tutorial: <a title="{{nextTitle}}" href="{{nextLink}}?completed={{curLink}}"><button
+					class="btn btn-primary">{{nextTitle}}</button></a></p>
+	</div>
+
+</body>
+
+{% endblock %}
+

@@ -1,0 +1,222 @@
+<!--Update You tube source and article details in paragraph and dictionary selection all_topics-->
+{% extends "header.html" %}
+{% block body %}
+
+<body class="body">
+
+
+	<div class="container" align="left" style="width:80%;">
+
+		<div class="row">
+			<div class="col-sm-9">
+				<h2>{{curTitle}}</h2>
+				<br>
+				{% for topic in all_topics['Stories'] %}
+				{% if topic[0] == curTitle and topic[2] != "" %}
+				<p>
+					{{ topic[2] }}
+				</p>
+				{% endif %}
+				{% if topic[0] == curTitle and topic[3] != "" %}
+				<!-- 16:9 aspect ratio -->
+				<center>
+					<div class="embed-responsive embed-responsive-16by9" style="height:80%; width:80%;">
+						<iframe class="embed-responsive-item" src="{{ topic[3]}}?html5=1"></iframe>
+					</div>
+				</center>
+				{% endif %}
+				{% endfor %}
+				<p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						यह बहुत समय पहले की बात है. एक सुदंर से वन में चार मित्र रहते थे- चूहा, कौआ, हिरण और कछुआ.
+						अलग-अलग प्रजाति के जीव होने के बाद भी उनमें बहुत घनिष्टता थी. चारों एक-दूसरे से इतना प्यार करते
+						थे कि एक-दूसरे पर जान छिडकते थे. चारों साथ-साथ खेलते, साथ ही खाते, सा ही घूमते, घुल-मिलकर रहते,
+						खूब बातें करते.</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						उसी वन में एक ख़ूबसूरत सा जल का सरोवर था, जिसमें वह कछुआ रहता था. सरोवर के तट के पास ही एक जामुन
+						का बहुत बड़ा पेड़ था. उसी पेड़ पर घोंसले बनाकर कौवा रहता था. पेड़ के नीचे ज़मीन में बिल बनाकर चूहा
+						रहता था और पास ही घनी झाड़ियों में हिरण का घर था.</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						दिन को कछुआ तट की रेत में खेलता, धूप सेंकता रहता, पानी में डुबकियां लगाता. तब बाकी तीनों मित्र
+						भोजन की तलाश में निकल पड़ते और दूर तक घूमकर सूर्यास्त के व़क्त लौट आते. उसके बाद चारों मित्र
+						इकट्ठे होते. साथ-साथ खाते, खेलते और धमा-चौकड़ी मचाते.</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						<img class="lazy alignnone wp-image-45271"
+							src="https://www.merisaheli.com/wp-content/uploads/2017/08/allfriends.jpg"
+							data-lazy-type="image"
+							data-lazy-src="https://www.merisaheli.com/wp-content/uploads/2017/08/allfriends.jpg"
+							alt="पंचतंत्र की कहानी: सच्चे मित्र" width="605" height="340"
+							data-lazy-srcset="https://www.merisaheli.com/wp-content/uploads/2017/08/allfriends.jpg 1024w, https://www.merisaheli.com/wp-content/uploads/2017/08/allfriends-150x84.jpg 150w, https://www.merisaheli.com/wp-content/uploads/2017/08/allfriends-300x169.jpg 300w, https://www.merisaheli.com/wp-content/uploads/2017/08/allfriends-800x450.jpg 800w, https://www.merisaheli.com/wp-content/uploads/2017/08/allfriends-685x385.jpg 685w, https://www.merisaheli.com/wp-content/uploads/2017/08/allfriends-350x197.jpg 350w"
+							sizes="(max-width: 605px) 100vw, 605px"
+							style="box-sizing: border-box; outline: none; border: 0px; max-width: 100%; height: auto;">
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						इसी तरह दिन मज़े में बीत रहे थे कि एक शाम को चूहा और कौवा तो लौट आए, लेकिन उनका मित्र हिरण नहीं
+						लौटा. तीनों मित्र बैठकर उसका इंतज़ार करने लगे. बहुत देर तक जब हिरण नहीं लौटा, तो वो सब उदास हो
+						गए. कछुआ भर्राए गले से बोला, “वह तो रोज़ तुम दोनों से भी पहले लौट आता था. आज क्या बात हो गई, जो
+						अब तक नहीं आया. मेरा तो घबरा रहा है, कहीं वो किसी मुसीबत में तो नहीं है.”</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						चूहे ने भी चिंतित स्वर में कहा, “बात बहुत गंभीर है. वह ज़रूर किसी मुसीबत में पड गया है. अब हम
+						क्या करें?”
+						<br style="box-sizing: border-box; outline: none;">कौवे ने कहा, “मित्रो, वह जहां चरने प्रायः
+						जाता है, मैं उधर उड़कर देखकर आता, लेकिन अंधेरा हो गया है, इसलिए नीचे कुछ नज़र नहीं आएगा. हमें सुबह
+						तक प्रतीक्षा करनी होगी. सुबह होते ही मैं उसकी कुछ ख़बर ज़रूर लाऊंगा.”
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						<br style="box-sizing: border-box; outline: none;">कछुए ने कहा, “रातभर नींद नहीं आएगी, तो मैं उस
+						ओर अभी चल पड़ता हूं. मेरी चाल भी बहुत धीमी है. तुम दोनों सुबह आ जाना.”
+						<br style="box-sizing: border-box; outline: none;">चूहा भी बोला, “मुझसे भी हाथ पर हाथ धरकर नहीं
+						बैठा जाएगा. मैं भी कछुए भाई के साथ चला जाता हूं. कौए भाई, तुम सुबह होते ही आ जाना.”
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						यह कहकर कछुआ और चूहा चल दिए. कौवे को भी नींद नहीं आई और वो सुबह होने का
+						<br style="box-sizing: border-box; outline: none;">इंतज़ार करने लगा. सुबह होते ही वो उड़ चला. वह
+						उड़ते-उड़ते चारों ओर नज़र डालता जा रहा था कि आगे एक स्थान पर कछुआ और चूहा जाते उसे नज़र आए. कौवे ने
+						कां कां करके उन्हें सूचना दी कि उसने उन्हें देख लिया है और वह खोज में आगे जा रहा है. अब कौवे ने
+						हिरण को पुकारना भी शुरू किया, “मित्र हिरण, तुम कहां हो? आवाज़ दो दोस्त.”
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						इतने में ही उसे किसी के रोने की आवाज़ सुनाई दी. स्वर उसके मित्र हिरण का लग रहा था. वह उस आवाज़ की
+						दिशा में उड़कर सीधा उस जगह पहुंचा, जहां हिरण एक शिकारी के जाल में फंसा छटपटा रहा था.
+						<br style="box-sizing: border-box; outline: none;">हिरण ने रोते हुए बताया कि कैसे एक ज़ालिम
+						शिकारी ने वहां जाल बिछा रखा था. दुर्भाग्यवश वह जाल नहीं देख पाया और फंस गया. हिरण ने रोते-रोते
+						कहा, “वह शिकारी आता ही होगा. वह मुझे पकड़कर ले जाएगा और मेरी कहानी ख़त्म समझो. मित्र कौवे! तुम
+						चूहे और कछुए को भी मेरा अंतिम नमस्कार कहना.”
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						<img class="lazy alignnone wp-image-45265"
+							src="https://www.merisaheli.com/wp-content/uploads/2017/08/1129_141.jpg"
+							data-lazy-type="image"
+							data-lazy-src="https://www.merisaheli.com/wp-content/uploads/2017/08/1129_141.jpg"
+							alt="पंचतंत्र की कहानी: सच्चे मित्र" width="598" height="336"
+							data-lazy-srcset="https://www.merisaheli.com/wp-content/uploads/2017/08/1129_141.jpg 1024w, https://www.merisaheli.com/wp-content/uploads/2017/08/1129_141-150x84.jpg 150w, https://www.merisaheli.com/wp-content/uploads/2017/08/1129_141-300x169.jpg 300w, https://www.merisaheli.com/wp-content/uploads/2017/08/1129_141-800x450.jpg 800w, https://www.merisaheli.com/wp-content/uploads/2017/08/1129_141-685x385.jpg 685w, https://www.merisaheli.com/wp-content/uploads/2017/08/1129_141-350x197.jpg 350w"
+							sizes="(max-width: 598px) 100vw, 598px"
+							style="box-sizing: border-box; outline: none; border: 0px; max-width: 100%; height: auto;">
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						कौआ बोला, “मित्र, तुम घबरा क्यों रहे हो. हम जान की बाज़ी लगाकर भी तुम्हें छुड़ा लेंगे.”
+						<br style="box-sizing: border-box; outline: none;">हिरण ने हताशा से कहा, “लेकिन तुम ऐसा कैसे कर
+						पाओगे? वह शिकारी बहुत ज़ालिम और शक्तिशाली है.”
+						<br style="box-sizing: border-box; outline: none;">कौवे ने अपने पंख फड़फड़ाए और अपनी योजना बताई,
+						“सुनो, मैं चूहे को पीठ पर बिठाकर ले आता हू्ं. वह अपने पैने दांतों से जाल को आसानी से कुतर देगा.”
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						हिरण को आशा की किरण दिखाई दी. उसकी आंखें ख़ुशी से चमक उठीं. <span
+							style="box-sizing: border-box; outline: none; font-size: 1rem;">कौआ तेज़ी से उड़ा और जल्दी से
+							वहां पहुंचा, जहां कछुआ व चूहा आ पहुंचे थे. कौवे ने समय नष्ट किए बिना बताया, “मित्रो, हमारा
+							दोस्त हिरण एक दुष्ट शिकारी के जाल में कैद है. जान की बाज़ी लगी है. अगर शिकारी के आने से पहले
+							हमने उसे न छुड़ाया, तो वह मारा जाएगा.”&nbsp;</span><span
+							style="box-sizing: border-box; outline: none; font-size: 1rem;">कछुआ घबरा गया, उसने पूछा,
+							“उसके लिए हमें क्या करना होगा? जल्दी बताओ?”&nbsp;</span><span
+							style="box-sizing: border-box; outline: none; font-size: 1rem;">चूहे के तेज़ दिमाग ने कौवे का
+							इशारा समझ लिया था, इसलिए वो बिना समय गंवाए बोल उठा, “घबराओ मत, कौवे भाई, मुझे अपनी पीठ पर
+							बैठाकर हिरण के पास जल्द से जल्द ले चलो.” इतने में ही दोनों उड़ चले. चूहे को जाल कुतरकर हिरण
+							को मुक्त करने में अधिक देर नहीं लगी.</span></p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						<span style="box-sizing: border-box; outline: none; font-size: 1rem;">मुक्त होते ही हिरण ने अपने
+							मित्रों को गले लगा लिया और रुंधे गले से उन्हें धन्यवाद दिया. तभी कछुआ भी वहां आ पहुंचा और
+							ख़ुुशी में शामिल हो गया.&nbsp;</span>हिरण बोला, “दोस्त, तुम भी आ गए. मैं भाग्यशाली हूं, जिसे
+						ऐसे सच्चे मित्र मिले हैं.” चारों मित्र भाव विभोर होकर ख़ुशी से उछलने, कूदने व नाचने लगे.
+						&nbsp;इतने में ही हिरण चौंका और उसने मित्रों को चेतावनी दी, “भाइयो, देखो वह ज़ालिम शिकारी आ रहा
+						है, तुरंत छिप जाओ.” चूहा फौरन पास के एक बिल में घुस गया. कौआ उड़कर पेड़ की डाल पर जा बैठा. हिरण एक
+						ही छलांग में पास की झाड़ी में जा घुसा, लेकिन कछुआ अपनी धीमी गति के कारण दो कदम भी न जा पाया था कि
+						शिकारी आ धमका.</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						उसने जाल को कटा देखकर अपना माथा पीटा कि आख़िर जाल में कौन-सा जानवर फंसा था और यह जाल किसने काटा?
+						यह जानने के लिए वह पैरों के निशानों के सुराग ढूंढ़ने के लिए इधर-उधर देख ही रहा था कि उसकी नज़र
+						रेंगते हुए कछुए पर पड़ी. उसकी आंखें चमक उठीं. वह सोचने लगा कि वाह! भागते चोर की लंगोटी ही सही। अब
+						यही कछुआ मेरा शिकार बनेगा और मेरे परिवार का भोजन बनेगा.
+						<br style="box-sizing: border-box; outline: none;">उसने कछुए को उठाकर अपने थैले में डाला और जाल
+						समेटकर चल पड़ा.
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						कौवे ने तुरंत हिरण व चूहे को बुलाकर कहा, “मित्रो, कछुए को शिकारी थैले में डालकर ले जा रहा है.”
+						<br style="box-sizing: border-box; outline: none;">चूहा बोला, “हमें अपने मित्र की जान बचानी ही
+						होगी और उसे उस शिकारी से छुड़ाना ही होगा, लेकिन कैसे?”
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						<br>
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						इस बार हिरण ने समस्या का हल सुझाया, दोस्तो, हमें चाल चलनी होगी. मैं लंगड़ाता हुआ शिकारी के आगे से
+						निकलुंगा. मुझे लंगड़ा समझकर वह मुझे पकड़ने के लिए कछुए वाला थैला छोड़कर मेरे पीछे जरूर भागेगा.
+						लेकिन वो कितनी देर तक मेरा पीछा कर पाएगा. मैं उसे दूर ले जाकर चकमा दे दूंगा. इस बीच चूहा भाई
+						थैले को कुतरकर कछुए को आज़ाद कर देगा.”</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						<br>
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						यह योजना सबको अच्छी लगी थी. योजना के अनुसार हिरण जानबूझकर शिकारी के रास्ते में आ गया और लंगड़ाकर
+						चलते हिरण को देख शिकारी की बांछे खिल उठीं. वह थैला पटककर हिरण के पीछे दौड़ पड़ा. हिरण उसे लंगड़ाने
+						का नाटक कर घने जंगल की ओर ले गया और फिर उसे चकमा देकर कहीं ओझल हो गया. इस बीच चूहे ने अपना काम
+						कर दिया था और अपने दोस्त कछुए को झुड़ा लिया था.</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						<img class="lazy alignnone wp-image-45267"
+							src="https://www.merisaheli.com/wp-content/uploads/2017/08/1129_191.jpg"
+							data-lazy-type="image"
+							data-lazy-src="https://www.merisaheli.com/wp-content/uploads/2017/08/1129_191.jpg"
+							alt="पंचतंत्र की कहानी: सच्चे मित्र" width="605" height="341"
+							data-lazy-srcset="https://www.merisaheli.com/wp-content/uploads/2017/08/1129_191.jpg 1024w, https://www.merisaheli.com/wp-content/uploads/2017/08/1129_191-150x84.jpg 150w, https://www.merisaheli.com/wp-content/uploads/2017/08/1129_191-300x169.jpg 300w, https://www.merisaheli.com/wp-content/uploads/2017/08/1129_191-800x450.jpg 800w, https://www.merisaheli.com/wp-content/uploads/2017/08/1129_191-685x385.jpg 685w, https://www.merisaheli.com/wp-content/uploads/2017/08/1129_191-350x197.jpg 350w"
+							sizes="(max-width: 605px) 100vw, 605px"
+							style="box-sizing: border-box; outline: none; border: 0px; max-width: 100%; height: auto;">
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						शिकारी ख़ुद से बहुत नाराज़ था कि आख़िर हिरण हाथ नहीं लगा. अब कछुए से ही काम चलाने का इरादा बनाकर जब
+						वह लौटा, तो उसे थैला भी खाली मिला. उसमें छेद बना हुआ था. शिकारी मुंह लटकाकर खाली हाथ घर लौट गया.
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						<br>
+					</p>
+					<p
+						style="box-sizing: border-box; outline: none; margin: 0px 0px 1.25rem; padding: 0px; font-family: Roboto, sans-serif; font-size: 14px; font-weight: 400; line-height: 1.6; text-rendering: optimizelegibility; color: rgb(68, 68, 68); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+						<span style="box-sizing: border-box; outline: none; color: rgb(255, 0, 255);"><strong
+								style="box-sizing: border-box; outline: none; font-weight: bold; line-height: inherit;">सीखः<span
+									style="box-sizing: border-box; outline: none; color: rgb(0, 0, 0);">&nbsp;सच्चे
+									मित्र हों, तो जीवन में मुसीबतों का आसानी से सामना किया जा सकता
+									है.</span></strong></span></p>
+				</p>
+			</div>
+			<div class="col-sm-3">
+				<div class="card" style="width:18rem;">
+					<ul class="list-group">
+						{% for topic in all_topics['Stories']%}
+						{% if topic[0] == curTitle %}
+						<li class="list-group-item list-group-item-secondary">{{topic[0]}}</li>
+						{% else %}
+						<li class="list-group-item"><a title="{{topic[0]}}">{{topic[0]}}</li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<p>The next tutorial: <a title="{{nextTitle}}" href="{{nextLink}}?completed={{curLink}}"><button
+					class="btn btn-primary">{{nextTitle}}</button></a></p>
+	</div>
+
+</body>
+
+{% endblock %}

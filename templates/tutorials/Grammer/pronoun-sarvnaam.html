@@ -1,0 +1,168 @@
+
+<!--Update You tube source and article details in paragraph and dictionary selection all_topics-->
+{% extends "header.html" %}
+{% block body %}
+<body class="body">
+
+
+	<div class="container" align="left" style="width:80%;">
+
+		<div class="row">
+			<div class="col-sm-9">
+				<h2>{{curTitle}}</h2>
+				<br>
+				{% for topic in all_topics['Grammer'] %}
+				{% if topic[0] == curTitle and topic[2] != "" %}
+				<p>
+					{{ topic[2] }}
+				</p>
+				{% endif %}
+				{% if topic[0] == curTitle and topic[3] != "" %}
+				<!-- 16:9 aspect ratio -->
+				<center>
+					<div class="embed-responsive embed-responsive-16by9" style="height:80%; width:80%;">
+						<iframe class="embed-responsive-item" src="{{ topic[3]}}?html5=1" ></iframe>
+					</div>
+				</center>
+				{% endif %}
+				{% endfor %}
+				<p>
+						<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">सर्वनाम के&nbsp;
+									  <b style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none;">छह</b> भेद होते हैं &nbsp;!
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">
+									  <br>
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">1 -&nbsp;<u style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: underline;">
+										<b style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none;">पुरुषवाचक सर्वनाम</b>
+									  </u> - जिस सर्वनाम का प्रयोग वक्ता अपने लिए एवं किसी अन्य के लिए करता है , वह&nbsp;</span><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">पुरुषवाचक सर्वनाम होता है जैसे -आप कहाँ रहते हैं &nbsp;!</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">
+									  <br>
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">इसके&nbsp;
+									  <b style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none;">तीन</b> भेद होते हैं &nbsp;!
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">
+									  <br>
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">1 - &nbsp;उत्तम &nbsp;पुरुष - मैं &nbsp;, हम&nbsp;</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">2 - &nbsp;मध्यम पुरुष - &nbsp;तू , &nbsp;तुम , आप&nbsp;</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">3 - &nbsp;अन्य पुरुष - &nbsp;वह , उसे , उन्हें&nbsp;</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">
+									  <br>
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">2 -
+									  <b style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none;"><u style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: underline;">&nbsp;निजवाचक सर्वनाम</u></b> - जिस सर्वनाम का प्रयोग कर्ता कारक स्वयं के लिए करता है&nbsp;
+									</span><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">यथा - मैं अपने आप चला जाऊँगा , खुद अपने - आदि !</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <br>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">3 - &nbsp;
+									  <b style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none;"><u style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: underline;">निश्चयवाचक&nbsp;सर्वनाम</u></b> - जिस सर्वनाम से किसी वस्तु या व्यक्ति अथवा पदार्थ के विषय में ठीक और निश्चित ज्ञान हो ,&nbsp;
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">&nbsp; &nbsp; &nbsp; जैसे - यह मेज है !</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">
+									  <br>
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">4 -&nbsp;
+									  <b style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none;"><u style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: underline;">अनिश्चयवाचक&nbsp;सर्वनाम</u></b> - वह सर्वनाम ,जो किसी निश्चित वस्तु&nbsp;या व्यक्ति का बोध नहीं कराए ,
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <br>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">&nbsp; &nbsp; &nbsp;जैसे - कुछ काम करो आदि !</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">
+									  <br>
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">5 -&nbsp;
+									  <b style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none;"><u style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: underline;">प्रश्नवाचक&nbsp;सर्वनाम&nbsp;</u></b>- जिस सर्वनाम का प्रयोग प्रश्न करने के लिए किया जाता है&nbsp;
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">
+									  <br>
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">&nbsp; &nbsp; &nbsp;जैसे - आपने क्या खाया है ?</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">
+									  <br>
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">6 -&nbsp;
+									  <b style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none;"><u style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: underline;">सम्बन्धवाचक&nbsp;सर्वनाम</u></b> - जिस सर्वनाम से एक शब्द या वाक्य का दूसरे शब्द या वाक्य से सम्बन्ध जाना जाता है&nbsp;
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">
+									  <br>
+									</span></div>
+								</div>
+								<div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px rgb(255, 255, 255); text-decoration: none; color: rgb(51, 51, 51); font-family: &quot;Source Sans Pro&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+								  <div style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; text-align: justify;"><span style="padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background: 0px 0px; text-decoration: none; font-family: inherit; font-size: large;">&nbsp; &nbsp; &nbsp;जैसे - जो करेगा सो भरेगा , जो जागेगा सो पावेगा , जो सोवेगा सो खोवेगा !</span></div>
+								</div>
+							  </div>
+				</p>
+			</div>
+			<div class="col-sm-3">
+				<div class="card" style="width:18rem;">
+					<ul class="list-group">
+						{% for topic in all_topics['Grammer']%}
+						{% if topic[0] == curTitle %}
+						<li class="list-group-item list-group-item-secondary">{{topic[0]}}</li>
+						{% else %}
+						<li class="list-group-item"><a title="{{topic[0]}}">{{topic[0]}}</li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<p>The next tutorial: <a title="{{nextTitle}}" href="{{nextLink}}?completed={{curLink}}"><button
+					class="btn btn-primary">{{nextTitle}}</button></a></p>
+	</div>
+
+</body>
+
+{% endblock %}
+

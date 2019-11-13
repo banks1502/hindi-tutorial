@@ -1,0 +1,376 @@
+{% extends "header.html" %}
+{% block body %}
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+  // Load the Visualization API and the corechart package.
+  google.charts.load('current', {'packages':['corechart']});
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.charts.setOnLoadCallback(drawChart);
+
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  function drawChart() {
+
+    var data = new google.visualization.arrayToDataTable([
+    ['Task','Hours per Day'],
+			{%- for key, value in completed_percentages.items() %}
+         ['{{ key }}', {{ value }}],
+		{%- endfor %}
+    ]);
+      
+
+    // Set chart options
+    var options = {title: 'My Progress Activities',
+          is3D: true,};
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+<div class="container">
+   <body class="body">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+         {% if session.logged_in %}
+         <li class="nav-item">
+            <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+               aria-selected="false">Overview</a>
+         </li>
+         {% endif %}
+         <li class="nav-item">
+            <a class="nav-link active" id="basics-tab" data-toggle="tab" href="#basics" role="tab"
+               aria-controls="basics" aria-selected="true">Basics</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" id="common-tab" data-toggle="tab" href="#common" role="tab" aria-controls="common"
+               aria-selected="false">Common Things</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" id="stories-tab" data-toggle="tab" href="#stories" role="tab" aria-controls="stories"
+               aria-selected="false">Stories</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" id="grammer-tab" data-toggle="tab" href="#grammer" role="tab" aria-controls="grammer"
+               aria-selected="false">Grammer</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general"
+               aria-selected="false">General</a>
+         </li>
+      </ul>
+      <!-- Begin Tab panes -->
+      <div class="tab-content">
+         <!-- BEGIN OVERVIEW TAB -->
+         <div role="tabpanel" class="tab-pane fade" id="home">
+            <br>
+            <p>Welcome to your dashboard. Here, you can track your progress, set goals, and figure out where to go next.
+            </p>
+            <br>
+            <div class="container">
+                  <div class="row">
+                    <div class="col-sm-4"><div id="chart_div"></div><strong>*Note: </strong>Check your percent completion on listed topics. Hover on to find % within each topic (first number) and %- contribution of this topic across all listed topics completed (Second number) so far in scale of 100. </div>
+                    <div class="col-sm-5">
+                        <div class="accordion" id="accordionExample">
+                              <div class="card">
+                                <div class="card-header" id="headingOne">
+                                  <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                      Basics
+                                    </button>
+                                  </h2>
+                                </div>
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                  <ul class="list-group">
+                                       {% for topic in topics['Basics']%}
+                                       {% if topic[1] in tracking %}
+                                       <li class="list-group-item"><a href={{topic[1]}} >{{topic[0]}}</a> <i class="material-icons" style="float:right;" >
+                                             done_all
+                                             </i></li>
+                                       {% else %}
+                                       <li class="list-group-item"><a href={{topic[1]}} >{{topic[0]}}</a></li>
+                                       {% endif %}
+                                       {% endfor %}
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class="card">
+                                <div class="card-header" id="headingThree">
+                                  <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                      Common Things
+                                    </button>
+                                  </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <ul class="list-group">
+                                          {% for topic in topics['Common Things']%}
+                                          {% if topic[1] in tracking %}
+                                          <li class="list-group-item"> <a href={{topic[1]}} >{{topic[0]}}</a><i class="material-icons" style="float:right;" >
+                                                done_all
+                                                </i></li>
+                                          {% else %}
+                                          <li class="list-group-item"><a href={{topic[1]}} >{{topic[0]}}</a></li>
+                                          {% endif %}
+                                          {% endfor %}
+                                     </ul>
+                                   </div>
+                              </div>
+                              <div class="card">
+                                    <div class="card-header" id="headingFour">
+                                      <h2 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                          Stories
+                                        </button>
+                                      </h2>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                        <ul class="list-group">
+                                              {% for topic in topics['Stories']%}
+                                              {% if topic[1] in tracking %}
+                                              <li class="list-group-item"> <a href={{topic[1]}} >{{topic[0]}}</a><i class="material-icons" style="float:right;" >
+                                                    done_all
+                                                    </i></li>
+                                              {% else %}
+                                              <li class="list-group-item"><a href={{topic[1]}} >{{topic[0]}}</a></li>
+                                              {% endif %}
+                                              {% endfor %}
+                                         </ul>       
+                                    </div>
+                                  </div>
+                                  <div class="card">
+                                    <div class="card-header" id="headingFive">
+                                      <h2 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                          Grammer
+                                        </button>
+                                      </h2>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                        <ul class="list-group">
+                                              {% for topic in topics['Grammer']%}
+                                              {% if topic[1] in tracking %}
+                                              <li class="list-group-item"> <a href={{topic[1]}} >{{topic[0]}}</a> <i class="material-icons" style="float:right;" >
+                                                    done_all
+                                                    </i></li>
+                                              {% else %}
+                                              <li class="list-group-item"><a href={{topic[1]}} >{{topic[0]}}</a></li>
+                                              {% endif %}
+                                              {% endfor %}
+                                         </ul>
+                                       </div>
+                                  </div>
+                                  <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                      <h2 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                          General
+                                        </button>
+                                      </h2>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <ul class="list-group">
+                                              {% for topic in topics['General']%}
+                                              {% if topic[1] in tracking %}
+                                              <li class="list-group-item"> <a href={{topic[1]}} >{{topic[0]}}</a><i class="material-icons" style="float:right;" >
+                                                    done_all
+                                                    </i></li>
+                                              {% else %}
+                                              <li class="list-group-item"><a href={{topic[1]}} >{{topic[0]}}</a></li>
+                                              {% endif %}
+                                              {% endfor %}
+                                         </ul>       
+                                    </div>
+                                  </div>      
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            
+
+
+            <div class="panel panel-default">
+               <div class="panel-body">
+               </div>
+               <div class="panel-footer">
+                  Going through all of the basics well best equip you to handle the largest array of problems that you
+                  may face, as well as helping you to pick up new topics along the way.
+               </div>
+            </div>
+         </div>
+         <!-- END OVERVIEW TAB -->
+         <!-- BEGIN BASICS TAB -->
+         <div class="tab-pane active" id="basics" role="tabpanel" aria-labelledby="basics-tab">
+            <br>
+            {% if session.logged_in %}
+            <div class="progress">
+               <div class="progress-bar" role="progressbar" aria-valuenow="{{completed_percentages['Basics']}}"
+                  aria-valuemin="0" aria-valuemax="100" style="width: {{completed_percentages['Basics']}}%;">
+                  {{completed_percentages['Basics']}}%
+               </div>
+            </div>
+            {% endif %}
+            <p>
+               हिंदी है देश की राष्ट्रभाषा और हिंदी व्याकरण हिंदी भाषा के अध्ययन का महत्त्वपूर्ण हिस्सा है।
+               हिंदी भाषा को शुद्ध रूप में लिखने और बोलने संबंधी नियमों को जाने के लिए हिंदी व्याकरण अच्छे तरीके से
+               समझना बहुत जरूरी होता है और यह Website आपको हिंदी व्याकरण को समझाने में पूरी तरह से मदद करेगी। यहां हिंदी
+               व्याकरण से संबंधित सभी टॉपिक को छोटे-छोटे भागों में वर्गीकृत करके उदाहरण सहित समझाया गया है।
+            </p>
+            <div class="row">
+               <div class="col-md-5">
+                  <div class="list-group">
+                     {%for infos in topics['Basics']%}
+                     {% if infos[1] in tracking %}
+                        <li class="list-group-item list-group-item-success"><a href="{{infos[1]}}"> {{infos[0]}}</a> <i class="material-icons" style="float:right;" >
+                              done_all
+                              </i></li>
+                     {% else %}
+                     <li class="list-group-item list-group-item-warning"><a href="{{infos[1]}}">{{infos[0]}} </a></li>
+                     {% endif %}
+                     {%endfor%}
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- END BASICS TAB -->
+         <!-- BEGIN COMMON THINGS TAB -->
+         <div class="tab-pane" id="common" role="tabpanel" aria-labelledby="common-tab">
+               <br>
+               {% if session.logged_in %}
+               <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="{{completed_percentages['Common Things']}}"
+                     aria-valuemin="0" aria-valuemax="100" style="width: {{completed_percentages['Common Things']}}%;">
+                     {{completed_percentages['Common Things']}}%
+                  </div>
+               </div>
+               {% endif %}
+            <p></p>
+            <div class="row">
+               <div class="col-md-5">
+                  <div class="list-group">
+                     <!--Banks<p><kbd data-toggle="collapse" data-target="#basicreqs" aria-expanded="false"
+                           aria-controls="basicreqs" style="background-color:#66666">Suggested Requirements for this
+                           series</kbd></p>
+                     <div class="collapse" id="basicreqs">
+                        <div class="well">
+                           <p>The willingness to ask questions.</p>
+                        </div>
+                     </div>-->
+                     {%for infos in topics['Common Things']%}
+                     {% if infos[1] in tracking %}
+                     <li class="list-group-item list-group-item-success"><a href="{{infos[1]}}"> {{infos[0]}}</a> <i
+                           class="material-icons" style="float:right;">
+                           done_all
+                        </i></li>
+                     {% else %}
+                     <li class="list-group-item list-group-item-warning"><a href="{{infos[1]}}">{{infos[0]}} </a>
+                     </li>
+                     {% endif %}
+                     {%endfor%}
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- END COMMON THINGS TAB -->
+         <!-- BEGIN STORIES TAB -->
+         <div class="tab-pane" id="stories" role="tabpanel" aria-labelledby="stories-tab">
+               <br>
+               {% if session.logged_in %}
+               <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="{{completed_percentages['Stories']}}"
+                     aria-valuemin="0" aria-valuemax="100" style="width: {{completed_percentages['Stories']}}%;">
+                     {{completed_percentages['Stories']}}%
+                  </div>
+               </div>
+               {% endif %}
+            <div class="row">
+               <div class="col-md-5">
+                  <div class="list-group">
+                     {%for infos in topics['Stories']%}
+                     {% if infos[1] in tracking %}
+                     <li class="list-group-item list-group-item-success"><a href="{{infos[1]}}"> {{infos[0]}}</a> <i
+                           class="material-icons" style="float:right;">
+                           done_all
+                        </i></li>
+                     {% else %}
+                     <li class="list-group-item list-group-item-warning"><a href="{{infos[1]}}">{{infos[0]}} </a>
+                     </li>
+                     {% endif %}
+                     {%endfor%}
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- END STORIES TAB -->
+         <!-- BEGIN GRAMMER TAB -->
+         <div role="tabpanel" class="tab-pane fade" id="grammer">
+               <br>
+               {% if session.logged_in %}
+               <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="{{completed_percentages['Grammer']}}"
+                     aria-valuemin="0" aria-valuemax="100" style="width: {{completed_percentages['Grammer']}}%;">
+                     {{completed_percentages['Grammer']}}%
+                  </div>
+               </div>
+               {% endif %}
+            <div class="row">
+               <div class="col-md-5">
+                  <div class="list-group">
+                     {%for infos in topics['Grammer']%}
+                     {% if infos[1] in tracking %}
+                     <li class="list-group-item list-group-item-success"><a href="{{infos[1]}}"> {{infos[0]}}</a> <i
+                           class="material-icons" style="float:right;">
+                           done_all
+                        </i></li>
+                     {% else %}
+                     <li class="list-group-item list-group-item-warning"><a href="{{infos[1]}}">{{infos[0]}} </a>
+                     </li>
+                     {% endif %}
+                     {%endfor%}
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- END GRAMMER TAB -->
+         <!-- BEGIN GENERAL TAB -->
+         <div class="tab-pane" id="general" role="tabpanel" aria-labelledby="general-tab">
+            <br>
+            {% if session.logged_in %}
+            <div class="progress">
+               <div class="progress-bar" role="progressbar" aria-valuenow="{{completed_percentages['General']}}"
+                  aria-valuemin="0" aria-valuemax="100" style="width: {{completed_percentages['General']}}%;">
+                  {{completed_percentages['General']}}%
+               </div>
+            </div>
+            {% endif %}
+         <p></p>
+         <div class="row">
+            <div class="col-md-5">
+               <div class="list-group">
+                  {%for infos in topics['General']%}
+                  {% if infos[1] in tracking %}
+                  <li class="list-group-item list-group-item-success"><a href="{{infos[1]}}"> {{infos[0]}}</a><i
+                     class="material-icons" style="float:right;">
+                     done_all
+                  </i> </li>
+                  {% else %}
+                  <li class="list-group-item list-group-item-warning"><a href="{{infos[1]}}">{{infos[0]}} </a>
+                  </li>
+                  {% endif %}
+                  {%endfor%}
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- END GENERAL TAB -->
+   </div>
+</div>
+</body>
+</div>
+
+{% endblock %}

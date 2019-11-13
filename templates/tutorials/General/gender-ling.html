@@ -1,0 +1,53 @@
+
+<!--Update You tube source and article details in paragraph and dictionary selection all_topics-->
+{% extends "header.html" %}
+{% block body %}
+<body class="body">
+
+
+	<div class="container" align="left" style="width:80%;">
+
+		<div class="row">
+			<div class="col-sm-9">
+				<h2>{{curTitle}}</h2>
+				<br>
+				{% for topic in all_topics['General'] %}
+				{% if topic[0] == curTitle and topic[2] != "" %}
+				<p>
+					{{ topic[2] }}
+				</p>
+				{% endif %}
+				{% if topic[0] == curTitle and topic[3] != "" %}
+				<!-- 16:9 aspect ratio -->
+				<center>
+					<div class="embed-responsive embed-responsive-16by9" style="height:80%; width:80%;">
+						<iframe class="embed-responsive-item" src="{{ topic[3]}}?html5=1" ></iframe>
+					</div>
+				</center>
+				{% endif %}
+				{% endfor %}
+				<p></p>
+			</div>
+			<div class="col-sm-3">
+				<div class="card" style="width:18rem;">
+					<ul class="list-group">
+						{% for topic in all_topics['General']%}
+						{% if topic[0] == curTitle %}
+						<li class="list-group-item list-group-item-secondary">{{topic[0]}}</li>
+						{% else %}
+						<li class="list-group-item"><a title="{{topic[0]}}">{{topic[0]}}</li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<p>The next tutorial: <a title="{{nextTitle}}" href="{{nextLink}}?completed={{curLink}}"><button
+					class="btn btn-primary">{{nextTitle}}</button></a></p>
+	</div>
+
+</body>
+
+{% endblock %}
+
