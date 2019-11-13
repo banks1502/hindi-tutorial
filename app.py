@@ -21,6 +21,8 @@ from flask_mail import Mail, Message
 
 
 app = Flask(__name__)
+app.secret_key = 'hindi-tutorial'
+
 app.config.update(
 	DEBUG=False,
 	#EMAIL SETTINGS
@@ -821,7 +823,6 @@ def अलंकार():
 
 
 if __name__ == "__main__":
-    app.secret_key = 'secret'
     app.run(debug=True)
 
     
