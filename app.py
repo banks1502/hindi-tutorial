@@ -3,20 +3,16 @@ from flask import Flask, render_template, redirect, \
 from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from functools import wraps
 from pymysql import escape_string as thwart
-#import json
-#import datetime
 from datetime import datetime,timedelta
 from time import mktime
 import os
 import time
-#import urllib
 from wtforms import Form, BooleanField, TextField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from dbconnect import connection
 import gc
 # Dictates urls and linkage
 from content_management import Content
-#import smtplib
 from flask_mail import Mail, Message
 
 
@@ -144,7 +140,7 @@ def sitemap():
       for rule in app.url_map.iter_rules():
           if "GET" in rule.methods and len(rule.arguments)==0:
               pages.append(
-                           ["http://pythonprogramming.net"+str(rule.rule),ten_days_ago]
+                           ["learn-hindi.herokuapp.com"+str(rule.rule),ten_days_ago]
                            )
 
       sitemap_xml = render_template('sitemap_template.xml', pages=pages)
@@ -154,17 +150,6 @@ def sitemap():
       return response
     except Exception as e:
         return(str(e))
-
-
-def index(chartID = 'chart_ID', chart_type = 'bar', chart_height = 350):
-	chart = {"renderTo": chartID, "type": chart_type, "height": chart_height,}
-	series = [{"name": 'Label1', "data": [1,2,3]}, {"name": 'Label2', "data": [4, 5, 6]}]
-	title = {"text": 'My Title'}
-	xAxis = {"categories": ['xAxis Data1', 'xAxis Data2', 'xAxis Data3']}
-	yAxis = {"title": {"text": 'yAxis Label'}}
-	return render_template('index.html', chartID=chartID, chart=chart, series=series, title=title, xAxis=xAxis, yAxis=yAxis)
- 
-
 
     
 @app.route('/', methods=['GET', 'POST'])
@@ -235,7 +220,7 @@ def main():
         return(str(e))
 
 
-@app.route('/jinjaman/')
+#@app.route('/jinjaman/')
 def jinjaman():
     try:
         gc.collect()
@@ -243,6 +228,29 @@ def jinjaman():
         return render_template("jinja-templating.html", data = data)
     except Exception as e:
         return(str(e))
+
+'''@app.route('/search/')
+def search_results():
+    results = []
+    search_string = str(request.args['q'])
+    #print(request.url,'\n',request.referrer)
+
+    import re
+
+    f = open('sitemap.xml','r')
+    res = f.readlines()
+    for d in res:
+        data = re.findall(search_string,d)
+        for i in data:
+            flash(re.findall('>(http:\/\/.+)<',i))
+
+
+    flash("No matching result")
+    return redirect(request.referrer)
+ 
+    '''
+
+
 
 @app.route('/contact/')
 def contact():
@@ -270,7 +278,7 @@ def email_sent():
         return str(e)
 
 
-@app.route('/include_example/')
+#@app.route('/include_example/')
 def include_example():
     try:
         replies = {'Jack':'Cool post',
@@ -282,7 +290,7 @@ def include_example():
     except Exception as e:
         return(str(e))
 
-@app.route('/header.py')
+#@app.route('/header.py')
 def headerpython():
     try:
         gc.collect()

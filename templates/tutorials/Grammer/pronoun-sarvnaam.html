@@ -5,7 +5,7 @@
 <body class="body">
 
 
-	<div class="container" align="left" style="width:80%;">
+	<div class="container" align="left" style="width:90%;">
 
 		<div class="row">
 			<div class="col-sm-9">
@@ -20,7 +20,7 @@
 				{% if topic[0] == curTitle and topic[3] != "" %}
 				<!-- 16:9 aspect ratio -->
 				<center>
-					<div class="embed-responsive embed-responsive-16by9" style="height:80%; width:80%;">
+					<div class="embed-responsive embed-responsive-16by9" >
 						<iframe class="embed-responsive-item" src="{{ topic[3]}}?html5=1" ></iframe>
 					</div>
 				</center>
@@ -157,7 +157,7 @@
 				</div>
 			</div>
 		</div>
-
+		<br>
 		<p>The next tutorial: <a title="{{nextTitle}}" href="{{nextLink}}?completed={{curLink}}"><button
 					class="btn btn-primary">{{nextTitle}}</button></a></p>
 	</div>
