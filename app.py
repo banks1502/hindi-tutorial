@@ -170,13 +170,6 @@ def main():
                     message = request.form['email'] + ', You are now logged in. '
                     flash( message ,'error')
 
-                    #msg = Message('User Creation', sender='contact@example.com', recipients=['bitesofjoy03@gmail.com'])
-                    #msg.body = """
-                    #        From: %s <%s>
-                    #        %s
-                    #        """ % (request.form['username'], request.form['email'], message)
-                    #mail.send(msg)"""
-
                     return redirect(url_for('dashboard'))
             except Exception as e:
                 flash("What are you doing?")
@@ -220,45 +213,12 @@ def main():
         return(str(e))
 
 
-#@app.route('/jinjaman/')
-def jinjaman():
-    try:
-        gc.collect()
-        data = [15, '15', 'Python is good','Python, Java, php, SQL, C++','<p><strong>Hey there!</strong></p>']
-        return render_template("jinja-templating.html", data = data)
-    except Exception as e:
-        return(str(e))
-
-'''@app.route('/search/')
-def search_results():
-    results = []
-    search_string = str(request.args['q'])
-    #print(request.url,'\n',request.referrer)
-
-    import re
-
-    f = open('sitemap.xml','r')
-    res = f.readlines()
-    for d in res:
-        data = re.findall(search_string,d)
-        for i in data:
-            flash(re.findall('>(http:\/\/.+)<',i))
-
-
-    flash("No matching result")
-    return redirect(request.referrer)
- 
-    '''
-
-
-
 @app.route('/contact/')
 def contact():
     try:
         return render_template("contact.html")
     except Exception as e:
         return(str(e))
-
 
 
 @app.route('/email_sent/' , methods=['GET', 'POST'])
@@ -276,27 +236,6 @@ def email_sent():
            return redirect(url_for('main'))
     except Exception as e:
         return str(e)
-
-
-#@app.route('/include_example/')
-def include_example():
-    try:
-        replies = {'Jack':'Cool post',
-                   'Jane':'+1',
-                   'Erika':'Most definitely',
-                   'Bob':'wow',
-                   'Carl':'amazing!',}
-        return render_template("includes_tutorial.html", replies = replies)
-    except Exception as e:
-        return(str(e))
-
-#@app.route('/header.py')
-def headerpython():
-    try:
-        gc.collect()
-        return render_template("header.py")
-    except Exception as e:
-        return(str(e))
 
 
 @app.errorhandler(404)
@@ -439,7 +378,7 @@ def register():
 
             else:
                 c.execute("INSERT INTO users (username, password, email, tracking) VALUES (%s, %s, %s, %s)",
-                    (thwart(username), thwart(password), thwart(email), thwart("/introduction-to-python-programming/")))
+                    (thwart(username), thwart(password), thwart(email), thwart("/alphabet-varnmala/")))
                 conn.commit()
                 flash('Thanks for registering')
                 c.close()
@@ -495,11 +434,8 @@ def topic_completion_percent():
         return completed_percentages
 
     pass
-    #return basics,pygame,pyopengl,kivy,flask,django,mysql,sqlite,datamanip,dataviz,nltk,svm,clustering,imagerec,forexalgo,robotics,supercomp,tkinter
-    
-@app.route('/guided-tutorials/', methods=['GET', 'POST'])
-@app.route('/topics/', methods=['GET', 'POST'])
-@app.route('/begin/', methods=['GET', 'POST'])
+
+
 @app.route('/dashboard/', methods=['GET', 'POST'])
 #@login_required
 def dashboard():
@@ -528,8 +464,6 @@ def terms_of_service():
 @app.route('/about/privacy-policy/', methods=['GET', 'POST'])
 def privacy_policy():
     return render_template("privacy_policy.html")
-
-
 
 @app.route(TOPIC_DICT["Common Things"][0][1], methods=['GET', 'POST'])
 def पक्षियों_का_नाम():
@@ -834,4 +768,4 @@ def अलंकार():
 if __name__ == "__main__":
     app.run(debug=True)
 
-    
+  
