@@ -73,7 +73,10 @@
             <br>
             <div class="container">
                   <div class="row">
-                    <div class="col-sm-4"><div id="chart_div"></div><strong>*Note: </strong>Check your percent completion on listed topics. Hover on to find % within each topic (first number) and %- contribution of this topic across all listed topics completed (Second number) so far in scale of 100. </div>
+                    <div class="col-sm-4">
+                       <div id="chart_div">
+                       </div><strong>*Note: </strong>Check your percent completion on listed topics. Hover on to find % within each topic (first number) and %- contribution of this topic across all listed topics completed (Second number) so far in scale of 100.             
+                     </div>
                     <div class="col-sm-5">
                         <div class="accordion" id="accordionExample">
                               <div class="card">
@@ -293,10 +296,12 @@
                   <div class="list-group">
                      {%for infos in topics['Stories']%}
                      {% if infos[1] in tracking %}
-                     <li class="list-group-item list-group-item-success"><a href="{{infos[1]}}"> {{infos[0]}}</a> <i
+                     <li class="list-group-item list-group-item-success"><a href="{{infos[1]}}"> {{infos[0]}}</a> 
+                        <i
                            class="material-icons" style="float:right;">
                            done_all
-                        </i></li>
+                        </i>                        
+                     </li>
                      {% else %}
                      <li class="list-group-item list-group-item-warning"><a href="{{infos[1]}}">{{infos[0]}} </a>
                      </li>

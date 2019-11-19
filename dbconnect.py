@@ -1,5 +1,8 @@
 import pymysql.cursors
 
+MAIL_SERVER='mail.cloudaccess.net'
+MAIL_USER = 'info@bitesofjoy.in'
+MAIL_PASS = '3idiots@123'
 # mysql --user=root -p
 def connection():
     conn = pymysql.connect(host='104.37.86.29', # your host, usually localhost
@@ -10,3 +13,5 @@ def connection():
     c = conn.cursor()
 
     return c, conn
+
+

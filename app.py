@@ -9,7 +9,7 @@ import os
 import time
 from wtforms import Form, BooleanField, TextField, PasswordField, validators
 from passlib.hash import sha256_crypt
-from dbconnect import connection
+from dbconnect import connection,MAIL_SERVER, MAIL_USER, MAIL_PASS
 import gc
 # Dictates urls and linkage
 from content_management import Content
@@ -22,12 +22,12 @@ app.secret_key = 'hindi-tutorial'
 app.config.update(
 	DEBUG=False,
 	#EMAIL SETTINGS
-	MAIL_SERVER='mail.cloudaccess.net',#'smtp.gmail.com',
+	MAIL_SERVER=MAIL_SERVER,#'smtp.gmail.com',
 	MAIL_PORT=587,#465,
     #MAIL_USE_SSL=True,
     MAIL_USE_TSL=True,
-    MAIL_USERNAME = 'info@bitesofjoy.in',
-	MAIL_PASSWORD = '3idiots@123'
+    MAIL_USERNAME = MAIL_USER,
+	MAIL_PASSWORD = MAIL_PASS
 	)
 mail = Mail(app)
 
@@ -304,6 +304,7 @@ def page_not_found(e):
     try:
         gc.collect()
         rule = request.path
+        print(rule)
         if "feed" in rule or "favicon" in rule or "wp-content" in rule or "wp-login" in rule or "wp-login" in rule or "wp-admin" in rule or "xmlrpc" in rule or "tag" in rule or "wp-include" in rule or "style" in rule or "apple-touch" in rule or "genericons" in rule or "topics" in rule or "category" in rule or "index" in rule or "include" in rule or "trackback" in rule or "download" in rule or "viewtopic" in rule or "browserconfig" in rule:
             pass
         else:
