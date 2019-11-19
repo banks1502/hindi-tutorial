@@ -5,22 +5,11 @@
 ##// CURRENT:
 ##// list of topics by {TOPIC:[["TITLE", "URL","SHORT DEFINITION","MOST VIEW YOUTUBE VIDEOS"]]}
 ##
-##// FUTURE:
-##////list of topics by {TOPIC:[["TITLE", "URL", "TAGS"],
-##////                          ["TITLE", "URL", "TAGS"]]}
-
-
 ##//From Shikshaa Deekshaa You tube channel
 
 
 
 def Content():
-##    //             Suggest Branches for next steps
-##    //             If liked: Matplotlib, link to data analysis or Pandas maybe
-##    //             If liked: GUI stuff: Kivy, PyGame, Tkinter
-##    //             if liked: Text and word-based: NLTK
-
-
     # MAIN : [TITLE, URL, BODY_TEXT (LIST), HINTS(LIST)]
     TOPIC_DICT = {"Basics":[["वर्णमाला","/alphabet-varnmala/","हिन्दी भाषा में प्रयुक्त सबसे छोटी ध्वनि वर्ण कहलाती है। जैसे-अ, आ, इ, ई, उ, ऊ, क्, ख् आदि। ","https://www.youtube.com/embed/U3MfXjiL0rM"],
                           ["स्वर","/vowel-swar/","","https://www.youtube.com/embed/6s5JOPukCkM"],
@@ -73,7 +62,5 @@ def Content():
 if __name__ == "__main__":
     x = Content()
 
-    #print(x["Basics"])
-
-    for each in x["Grammer"]:
+       for each in x["Grammer"]:
         print("Title:",each[0],"URL:",each[1])
